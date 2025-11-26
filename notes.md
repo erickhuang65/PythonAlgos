@@ -348,3 +348,36 @@ Subtree:
 **Binary Search Tree (BST)**
 - traversal refers to visitng each node in a specific order
 - there are three main types of depth-first traversal techniques
+1. Inorder Traversal: Left subtree -> Root -> Right subtree
+2. Preorder Traversal: Root -> Left subtree -> Right subtree
+3. Postorder Traversal: Left subtree -> Right subtree -> Root
+
+BST Limitation:
+1. Unbalanced BST:
+- tree could degenereate into a LinkedList if elements are inserted in a sorted or nearly sorted order
+- leads to poor time complexity for searching, insertion and deletion, becoming closer to linear time instead of optimial logarithmic time
+
+2. Degenerate Trees:
+- extreme case of unbalanced BSTs where each node has only one child essentially forming a LinkedList
+- results very poor time complexity for all operations, rendering the advantages of using BST ineffectively
+- e.g., 4,3,2,1
+
+3. Performance issue:
+- unbalanced BST and degenerate Trees degrades common operations: search, insert, delete and can take linear time 
+
+4. Complex Balancing:
+- adds overhead and complexity to the code
+
+5. Lack of Unique Keys:
+- BST generally do not support DUPLICATED keys
+
+6. Memory Overhead:
+- each node in BST requires additional memory for storing pointers to the left and right children
+- memory overhead can become significant for large datasets, especially if the tree is poorly balanced 
+
+7. Not suitable for Dynamic Datasets:
+- BST is not suited-well for frequently change in size
+- Insertion and deletion could lead to imbalanced trees, requiring addiitonal balancing operations, which can be computationally expensive
+
+8. Limited Search Performance for Equal Keys:
+- BST provide efficient search time for unique keys, searching for the next greater or lesser element for equal keys requires addtional operation
