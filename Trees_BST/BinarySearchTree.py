@@ -3,7 +3,8 @@ class TreeNode:
         self.val = val
         self.left = None
         self.right = None
-
+        
+    # TRAVERSAL TECHNIQUES
     def inorder_traversal(self, root):
         # recursive method for inorder traversal
         if root is None:
@@ -32,6 +33,7 @@ class TreeNode:
         self.postorder_traversal(root.right)
         print(root.val, end=" ")
 
+    #BST OPERATIONS
     def insertion(self, node, val):
         # adding a new node while maintaining BST structure with left subtree contain 
         if node is None:
