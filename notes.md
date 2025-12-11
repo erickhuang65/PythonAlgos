@@ -383,6 +383,43 @@ BST Limitation:
 - BST provide efficient search time for unique keys, searching for the next greater or lesser element for equal keys requires addtional operation
 
 
+**HashTable**
+
+**Hash Tables**
+- key-value pairs
+- allow fast lookups, insertions, deletions
+- efficiently managing retrieving data
+
+*4 Main elements to any Hash Table*
+
+Keys: unique identifier. Keys are inputs we feed into our hash function. It can be any data type - numbers, strings, or even objects. The crucial characteristics of keys is that they should be unique. If two pieces of data share the sam ekey, it might lead to complications, like collisions
+
+Values or Data: Values are the actual data stored in the Hash Table. Can be single number to a complex objects or even a function.
+
+Hash Function: is the engine that drives a hash table. It is responsible for transforming keys into hash values, which dictate where we store our data in the table
+
+Buckets: Think of bucket as shelves in our library, each one design to store a specific book or piece of data
+
+*Basic Operations for Hash Tables*
+
+Insert(key, value) - calculates hash index, stores the key-value pair in the slot at that index
+
+Search(key) - finds the slot and returns the value associated with key, or null if not present
+
+Delete(key) - removes key-value pair stored at index
+
+Collisions 
+- it occurs when an INSERT() tries to insert an item at a table slot already occupied by another item. 
+
+Overflows
+- occurs when the number of elements inserted exceeds fixed capacity allocated for the bucket array
+
+Resolving Collisions
+1. Open addressing/ Closed hashing
+2. Chaining/ Open hashing
+
+
+
 **HashSets**
 - collection of unique elements where duplicates are not allowed
 
