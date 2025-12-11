@@ -98,3 +98,19 @@ class Treeroot:
         # compare left var to right var
         return max(left_depth, right_depth) + 1
         
+    def isBalanced(self, root):
+        # binary tree is balanced if,
+        # for each node, the difference in height its left and right subtree is no more than one
+        if root is None:
+            return 0
+        
+        def dfs(root):
+            if not root:
+                return [True, 0]
+        
+        left = dfs(root.left)
+        right = dfs(root.right)
+
+        
+        
+        return True

@@ -381,3 +381,27 @@ BST Limitation:
 
 8. Limited Search Performance for Equal Keys:
 - BST provide efficient search time for unique keys, searching for the next greater or lesser element for equal keys requires addtional operation
+
+
+**HashSets**
+- collection of unique elements where duplicates are not allowed
+
+Hash Characteristics: 
+- ensures every element is unique
+- allows ONLY one null value
+- HashSets do not maintain a specific order
+
+HashTable vs HashSet:
+- HashTable is like a dictionary, where key is associated iwth a value
+- HashSet is like a unique-word collector - it doesn't care about meanings, just that word
+
+**When to use HashSet**
+- fast lookups; check if an element exist is O(1)
+- remove duplicates
+- unordered collections - when order does not matter
+- unique storage - best for storing distinct items
+
+Time Complexity of HashSet
+- Insertion, LookUp, Deletion typically runs O(1) time because of hash functions
+- worst case, operations degrades to O(n) if multiple elements collide and are stored in a single bucket, requiring linear search
+- HashSet performs efficiently as long as collisions are minimized and load factor is maintained
