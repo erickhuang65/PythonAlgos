@@ -383,8 +383,6 @@ BST Limitation:
 - BST provide efficient search time for unique keys, searching for the next greater or lesser element for equal keys requires addtional operation
 
 
-**HashTable**
-
 **Hash Tables**
 - key-value pairs
 - allow fast lookups, insertions, deletions
@@ -418,7 +416,7 @@ Resolving Collisions
 1. Open addressing/ Closed hashing
 2. Chaining/ Open hashing
 
-
+Open Addressing Techniques resolve hash collisions by probing the next available slot within the hash table itself. 
 
 **HashSets**
 - collection of unique elements where duplicates are not allowed
