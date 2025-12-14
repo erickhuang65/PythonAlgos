@@ -35,6 +35,59 @@ Avoid direct modification: use a copy or iterate backward if needed
 Array Methods: 
 Know Built-in Methods: understand their time complexity
 
+**Types of Data Structures**
+
+Primitive Data Structures:
+- integer
+- float
+- character
+- boolean
+
+Non-Primitive Data Structure:
+
+1. Linear:
+Direct Access Linear DS
+- Array
+
+Sequential Access Linear DS
+- Linked List
+- Stack
+- Queue
+
+2. Non-Linear:
+
+Hiearchical Non-Linear DS
+- Trees (Binary Tree, BST, AVL, etc..)
+- Heaps (special type of tree)
+- Trie (special type of tree)
+
+Unordered Non-Linear DS
+- Matrix (2D array - grid structure)
+- Graphs
+- Sets
+- Hash Tables
+
+**Big-O notation**
+- mathematcial notation that is used to describe the performance or complexity of an algorithm; how long an algorithm takes to run as the input size grows
+- it provides a rough estimate of how long an algorithm takes to run (how much memory it uses), based on the size of the input
+- provides a way to compare running time of different algos, regardless of specific hardware or implementation
+- only provides upper bound on the running time of an algorithm
+
+Time Complexity
+- meaures how long an algo takes to run based on input size
+
+Space Complexity
+- measure how much memory an algo requires based on the size of input
+
+Examples of Time Complexity:
+
+1. O(1): Constant Time; running time is independent of the size of input
+2. O(n): Linear Time; running time increases linearly with the size of input
+3. O(n^2): Quadratic Time; running time increases is proportional to the square of the size of the input
+4. O(logn): Logarithmic Time; running time increases logarithmically with the size of the input
+5. O(2^n): Exponential Time; running time increases exponentially in the size of input
+
+===========================================
 
 **ARRAY**:
 - collection of items stored in single block of memeory
@@ -53,6 +106,7 @@ Brute Force:
 Hash Set:
 - set data structure to store unique values
 
+===========================================
 
 **MATRIX**:
 - two-dimensional data structures used for storing elements in a grid-like format with rows and columns
@@ -68,6 +122,7 @@ Accessing Matrices:
 df[row][column]
 df[0][0] = (first row, first column)
 
+===========================================
 
 **STACK**:
 - its a linear data structure that follows "Last-in, First-out" (LIFO) principal
@@ -129,6 +184,7 @@ Every visited web page is pushed onto the history stack.
 Clicking "Back" pops the last visited page, returning the user to the previous one.
 This method allows users to navigate webpages in reverse order efficiently.
 
+======================================
 
 **Queue**:
 - FIFO (First-In-First-Out)
@@ -222,6 +278,7 @@ Deque (Double-Ended Queue):
 - Front Insertion & Rear Insertion
 - Front Removal & Rear Removal
 
+===========================================
 
 **LinkedList**
 - node is a building block of a LinkedList
@@ -270,6 +327,7 @@ Doubly LinkedList
 - Insertion (adding a new node at a specified position) adjusting both next and prev pointers (beggining, end position, or middle position)
 - Deletion (removes a node while ensuring both next and prev pointers neighboring nodes are correctly updated; deletion can occur at beggining, end, and middle)
 
+===========================================
 
 **Tree & Binary Search Tree**
 
@@ -382,6 +440,7 @@ BST Limitation:
 8. Limited Search Performance for Equal Keys:
 - BST provide efficient search time for unique keys, searching for the next greater or lesser element for equal keys requires addtional operation
 
+===========================================
 
 **Hash Tables**
 - key-value pairs
@@ -417,6 +476,10 @@ Resolving Collisions
 2. Chaining/ Open hashing
 
 Open Addressing Techniques resolve hash collisions by probing the next available slot within the hash table itself. 
+
+
+
+===========================================
 
 **HashSets**
 - collection of unique elements where duplicates are not allowed
