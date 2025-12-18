@@ -385,8 +385,7 @@ Degree of a node:
 Subtree:
 - a smaller tree within the main tree, consisting of a node and its desecedants
 
-**Binary Tree:**
-- type of tree where each node can have at most 2 children (left & right children)
+
 
 **Full Tree:**
 - every node has either 0 children (leaf node) or 2 children
@@ -475,7 +474,34 @@ Resolving Collisions
 1. Open addressing/ Closed hashing
 2. Chaining/ Open hashing
 
+*Open Addressing (Closed Hashing)*
+
 Open Addressing Techniques resolve hash collisions by probing the next available slot within the hash table itself. 
+
+Collision Resolution Schemes:
+
+1. Linear probing: simplest way to handle collisions by linearly searching consecutive slots for the next empty location
+
+2. Quadratic probing: attemps ot find an alternative empty slot for th ekey by using a quadratic funtion to probe the successive possible positions
+
+3. Double hashing: uses two hash functions to determine the next probing location
+
+4. Random probing: uses pseudo-random generator (PRNG) to compute the step size or increment value for probes in cases of collisions
+
+*Separate Chaining (Open Hashing)*
+
+Selects the right closed hashing technique for solving collisions can be tough; we'd need to keep the pros and cons of different strategies in mind and then make the best decision. 
+
+Separate chaining offers simpler chaining mechanism to resolve collisions. Each slot in the hash table points to a separate data structure, such as linkedlist. This linkedlist or chain stores multiple elements that share the same hash index. 
+
+Separate chaining is an "open hashing" technique because hash talbe is "open" to accomodate multiple elements within a single bucket to handle collisions. 
+
+Insertion in Separate chaining
+- item with hash key (x), we could just append the item at the list/ chain linked in to x slot of the table. 
+
+Deletion in Separate chaining
+- do not need to keep any deletion sign or marks. Can directly delete the item's node from the chain linked to the relevant hash table slot
+
 
 
 
