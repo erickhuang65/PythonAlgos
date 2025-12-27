@@ -385,7 +385,8 @@ Degree of a node:
 Subtree:
 - a smaller tree within the main tree, consisting of a node and its desecedants
 
-
+**Binary Tree:**
+- type of tree where each node can have at most 2 children (left & right children)
 
 **Full Tree:**
 - every node has either 0 children (leaf node) or 2 children
@@ -448,7 +449,7 @@ BST Limitation:
 
 *4 Main elements to any Hash Table*
 
-Keys: unique identifier. Keys are inputs we feed into our hash function. It can be any data type - numbers, strings, or even objects. The crucial characteristics of keys is that they should be unique. If two pieces of data share the sam ekey, it might lead to complications, like collisions
+Keys: unique identifier. Keys are inputs we feed into our hash function. It can be any data type - numbers, strings, or even objects. The crucial characteristics of keys is that they should be unique. If two pieces of data share the same key, it might lead to complications, like collisions
 
 Values or Data: Values are the actual data stored in the Hash Table. Can be single number to a complex objects or even a function.
 
@@ -482,7 +483,7 @@ Collision Resolution Schemes:
 
 1. Linear probing: simplest way to handle collisions by linearly searching consecutive slots for the next empty location
 
-2. Quadratic probing: attemps ot find an alternative empty slot for th ekey by using a quadratic funtion to probe the successive possible positions
+2. Quadratic probing: attemps to find an alternative empty slot for th ekey by using a quadratic funtion to probe the successive possible positions
 
 3. Double hashing: uses two hash functions to determine the next probing location
 
@@ -494,14 +495,13 @@ Selects the right closed hashing technique for solving collisions can be tough; 
 
 Separate chaining offers simpler chaining mechanism to resolve collisions. Each slot in the hash table points to a separate data structure, such as linkedlist. This linkedlist or chain stores multiple elements that share the same hash index. 
 
-Separate chaining is an "open hashing" technique because hash talbe is "open" to accomodate multiple elements within a single bucket to handle collisions. 
+Separate chaining is an "open hashing" technique because hash table is "open" to accomodate multiple elements within a single bucket to handle collisions. 
 
 Insertion in Separate chaining
 - item with hash key (x), we could just append the item at the list/ chain linked in to x slot of the table. 
 
 Deletion in Separate chaining
 - do not need to keep any deletion sign or marks. Can directly delete the item's node from the chain linked to the relevant hash table slot
-
 
 
 
@@ -529,3 +529,4 @@ Time Complexity of HashSet
 - Insertion, LookUp, Deletion typically runs O(1) time because of hash functions
 - worst case, operations degrades to O(n) if multiple elements collide and are stored in a single bucket, requiring linear search
 - HashSet performs efficiently as long as collisions are minimized and load factor is maintained
+
