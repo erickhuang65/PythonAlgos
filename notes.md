@@ -493,7 +493,7 @@ Collision Resolution Schemes:
 
 Selects the right closed hashing technique for solving collisions can be tough; we'd need to keep the pros and cons of different strategies in mind and then make the best decision. 
 
-Separate chaining offers simpler chaining mechanism to resolve collisions. Each slot in the hash table points to a separate data structure, such as linkedlist. This linkedlist or chain stores multiple elements that share the same hash index. 
+Separate chaining offers simpler chaining mechanism to resolve collisions. Each slot in the hash table points to a separate data structure, such as linkedlist. This linkedlist or chain stores multiple elements that share the same hash index.
 
 Separate chaining is an "open hashing" technique because hash table is "open" to accomodate multiple elements within a single bucket to handle collisions. 
 
@@ -503,7 +503,40 @@ Insertion in Separate chaining
 Deletion in Separate chaining
 - do not need to keep any deletion sign or marks. Can directly delete the item's node from the chain linked to the relevant hash table slot
 
+Perks of separate chaining
+1. Dynamic Memeory Usage: Insertions appends new node at the chains. Therefore, the table with separate chaining can grow and shrink as per number of elements
 
+2. Simple Implementation: using linked lists to manage collisions
+
+3. Graceful Handling of Duplicates: allowing multiple records with the same key to be stored and retrieved accurately; 
+
+Downside of separate chaining
+1. Increased memory overhead: requires additional memory to store pointers or reference to linked lists for each bucket
+
+2. Cache Inefficiency: because it resolves linked list, cache performance can be negatively impacted due to non-contiguous memory access
+
+3. Dynamic allocation of memory for linked list can lead to external fragmentation, which may affect the performance of memory management in the system
+
+4. Worst-Case Time Complexity: When multiple keys are hashed to the same bucket and form long linked lists, time complexity for search, insert, and delete can degrade to O(n)
+
+5. Memory Allocation Overhead: Dynamic memory allocaiton for reach new element can add overhead and might lead to performance issues when the system is under high memory pressure
+
+*Selecting Hash Function*
+Characteristics of a good hash function:
+
+1. Hash function should spread out keys evenly across all slots in hash table. Each slot should have equal chance of being hashed to. 
+2. Efficient; requires minimal processing power and time to compute
+3. Different keys should end up getting mapped to different slots as much as possible. 
+
+Divison Method: Calculating the remainder obtained by dividing the key by the size of the hash table. The remainder is taken as the hash code (hash_key = key % table_size). However, if table size is not a prime number, it may lead to clustering. 
+
+Folding Method: Dividing the key into smaller parts and then combining them to calculate the hash code. It is useful when dealing with large keys or when key does not evenly fit into the hash table size. 
+
+Digit sum: hash_key = (5+3+2+4+6+1)%5 = 21%5 = 1
+
+Reduction: hash_key = ()
+
+Mid-square Method: 
 
 ===========================================
 
