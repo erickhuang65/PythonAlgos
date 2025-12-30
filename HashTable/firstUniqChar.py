@@ -24,4 +24,3 @@ class Solution:
                 return index
         # else return -1
         return -1
-

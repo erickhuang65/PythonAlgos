@@ -559,7 +559,11 @@ HashTable vs HashSet:
 - unique storage - best for storing distinct items
 
 Time Complexity of HashSet
-- Insertion, LookUp, Deletion typically runs O(1) time because of hash functions
-- worst case, operations degrades to O(n) if multiple elements collide and are stored in a single bucket, requiring linear search
+- Insertion, LookUp, Deletion typically runs O(1) time because hash function computes an index directly
+- Worst case, operations degrades to O(n) if multiple elements collide and are stored in a single bucket, requiring linear search
 - HashSet performs efficiently as long as collisions are minimized and load factor is maintained
+
+Space Complexity of HashSet
+- HashSets requires O(n) space in an average case, where n is the number of stored elements
+- if resizing occurs due to high load factor, temporary space usage may increase to O(n+m), where m is the new table size after rehashing
 
