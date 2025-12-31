@@ -567,3 +567,19 @@ Space Complexity of HashSet
 - HashSets requires O(n) space in an average case, where n is the number of stored elements
 - if resizing occurs due to high load factor, temporary space usage may increase to O(n+m), where m is the new table size after rehashing
 
+===========================================
+
+**Heap**
+- Tree-based data structure 
+- Designed for efficient priority management
+- Widely used in priority queues, Dijkstra's shortest path algorithm, heap sort
+- It is a special type of binary tree that maintains a specific order between parent and child nodes
+- It is always a complete binary tree
+
+*Two types of Heaps*
+1. Max Heap: every parent node has a value greater than or equal to it's children, ensuring largest element is at the root
+2. Min Heap: every parent node has a value smaller than or equal to its children, ensuring smallest element is at the root
+
+Unlike Binary Search Tree, Heaps does not enforce an ordering between siblings and only between parents and children. To optimize performance, heaps are commonly stored as arrays, making operations like insertion, deletion, and retrieval very efficent
+
+
