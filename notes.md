@@ -333,7 +333,7 @@ Doubly LinkedList
 
 Tree Basics:
 - is a hierarchical data structure that simulates a tree-like structure with a set of connected nodes
-- unliked linear data structure (e.g., arrays or LinkedList), tree allows for more complex relationships and efficient organizaiton of data
+- unliked linear data structure (e.g., arrays or LinkedList), tree allows for more complex relationships and efficient organization of data
 - useful for represeting data that forms a hierarchy (e.g., file systemms)
 - made up of nodes that are arranged in hierarchical structure
 - top hierarchy is root node - acts as the starting point
