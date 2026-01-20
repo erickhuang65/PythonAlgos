@@ -44,7 +44,6 @@ Primitive Data Structures:
 - boolean
 
 Non-Primitive Data Structure:
-
 1. Linear:
 Direct Access Linear DS
 - Array
@@ -406,9 +405,15 @@ Subtree:
 **Binary Search Tree (BST)**
 - traversal refers to visitng each node in a specific order
 - there are three main types of depth-first traversal techniques
+
 1. Inorder Traversal: Left subtree -> Root -> Right subtree
+- use cases: get all values in a BST in a sorted order
+
 2. Preorder Traversal: Root -> Left subtree -> Right subtree
+- use cases: clone/ copy a tree
+
 3. Postorder Traversal: Left subtree -> Right subtree -> Root
+- safely delete a tree (delete children are processed before the parent)
 
 BST Limitation:
 1. Unbalanced BST:
@@ -571,6 +576,7 @@ Space Complexity of HashSet
 
 **Heap**
 - Tree-based data structure 
+- Maintains a COMPLETE binary tree structure
 - Designed for efficient priority management
 - Widely used in priority queues, Dijkstra's shortest path algorithm, heap sort
 - It is a special type of binary tree that maintains a specific order between parent and child nodes
@@ -581,5 +587,18 @@ Space Complexity of HashSet
 2. Min Heap: every parent node has a value smaller than or equal to its children, ensuring smallest element is at the root
 
 Unlike Binary Search Tree, Heaps does not enforce an ordering between siblings and only between parents and children. To optimize performance, heaps are commonly stored as arrays, making operations like insertion, deletion, and retrieval very efficent
+
+Heaps are usually stored in an array to optimize space and operations. This array representation makes insertion, deletion, and access operations more efficient without needing pointers
+
+Heap is stored in an array by level-order traversal (breadth-first order).
+
+For any node at index i:
+- left child is at index 2i + 1
+- right child is at index 2i + 2
+- parent node is at index (i - 1)/2 (integer division)
+
+Since Heaps maintain a complete binary tree structure, accessing the maximum (for max heap) or minimum (for min heap) is a constant-time operation with O(1) complexity
+
+Insertion in Heap always happens at the end of the heap to maintain a complete binary tree
 
 

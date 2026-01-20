@@ -1,6 +1,6 @@
 class Treeroot:
-    def __init__(self, key):
-        self.key = key
+    def __init__(self, val):
+        self.val = val
         self.left = None
         self.right = None
 
@@ -10,7 +10,7 @@ class Treeroot:
         if root is None:
             return
         self.inorder_traversal(root.left)
-        print(root.key, end=" ")
+        print(root.val, end=" ")
         self.inorder_traversal(root.right)
 
     def preorder_traversal(self, root):
@@ -21,7 +21,7 @@ class Treeroot:
         # 3) traverse the right subtree recursively
         if root is None:
             return
-        print(root.key, end=" ")
+        print(root.val, end=" ")
         self.preorder_traversal(root.left)
         self.preorder_traversal(root.right)
 
@@ -31,42 +31,42 @@ class Treeroot:
             return
         self.postorder_traversal(root.left)
         self.postorder_traversal(root.right)
-        print(root.key, end=" ")
+        print(root.val, end=" ")
 
     #BST OPERATIONS
-    def insert(self, root, key):
+    def insert(self, root, val):
         # adding a new root while maintaining BST structure with left subtree contain 
         if root is None:
-            return Treeroot(key)
+            return Treeroot(val)
         
-        if key < root.key:
-            root.left = self.insert(root.left, key)
-        elif key > root.key:
-            root.right = self.insert(root.right, key)
+        if val < root.val:
+            root.left = self.insert(root.left, val)
+        elif val > root.val:
+            root.right = self.insert(root.right, val)
         else:
-            print(f"Duplicate keyue, {key} not allowed in BST")
+            print(f"Duplicate value, {val} not allowed in BST")
         return root
     
-    def search(self, root, key):
-        # searching in a BST efficiently finds a given keyue by leveraging BST properpy.
-        if root is None or root.key == key:
+    def search(self, root, val):
+        # searching in a BST efficiently finds a given value by leveraging BST properpy.
+        if root is None or root.val == val:
             return root
-        # if key is greater, move to the right subtree
-        if key < root.key:
-            root.right = self.searching(root.left, key)
-        # repeat until keyue is found or the search ends at a NULL pointer
-        return self.search(root.right, key)
+        # if val is greater, move to the right subtree
+        if val < root.val:
+            root.right = self.searching(root.left, val)
+        # repeat until value is found or the search ends at a NULL pointer
+        return self.search(root.right, val)
     
-    def delete(self, root, key):
+    def delete(self, root, val):
         # delete a root from BST requires adjusting the tree structure ensuring BST stays intact
         if not root:
             return root
         
-        if key < root.key:
-            root.left = self.delete(root.left, key)
+        if val < root.val:
+            root.left = self.delete(root.left, val)
 
-        elif key > root.key:
-            root.right = self.delete(root.right, key)
+        elif val > root.val:
+            root.right = self.delete(root.right, val)
         
         else:
             # if left child is NULL
@@ -98,19 +98,32 @@ class Treeroot:
         # compare left var to right var
         return max(left_depth, right_depth) + 1
         
-    def isBalanced(self, root):
-        # binary tree is balanced if,
-        # for each node, the difference in height its left and right subtree is no more than one
-        if root is None:
+    # helper function to calculate depth of a Tree
+    def depth(self, node):
+        if not node:
             return 0
+        # create a variable to recursively traverse and grabs the height of left
+        left_depth = self.depth(node.left)
+        if left_depth == -1:
+            return -1
+        # create a variable to recursively traverse and grabs the height of right
+        right_depth = self.depth(node.right)
+        if right_depth == -1:
+            return -1
+        # if the absolute val of () >= 1
+        if abs(left_depth - right_depth) > 1:
+            return -1
         
-        def dfs(root):
-            if not root:
-                return [True, 0]
-        
-        left = dfs(root.left)
-        right = dfs(root.right)
+        return max(left_depth, right_depth) + 1
 
-        
-        
-        return True
+    def isBalanced(self, root):
+        # binary tree is balanced if, for each node, the difference in height its left and right subtree is no more than one
+        return self.depth(root) != 1
+
+    # find the smallest difference between the values of any two different nodes
+    def minDiffInBST(self, root):
+        min_diff = float('inf')
+        pass
+
+    def maxDepth(self, root):
+        pass
